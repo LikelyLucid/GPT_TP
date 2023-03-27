@@ -5,7 +5,7 @@ proxy_list_url = "https://raw.githubusercontent.com/mertguvencli/http-proxy-list
 pl = ProxyList.from_network_file(proxy_list_url)
 proxy = f"http://{pl.get_random_server().get_address()}"
 print(proxy)
-options.proxies = proxy
+# options.proxies = proxy
 email = "micool.plays@gmail.com"
 password = "micooliscool"
 # Optionally, you can pass a file path to save the conversation
