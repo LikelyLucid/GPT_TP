@@ -1,18 +1,5 @@
-from proxylist import ProxyList
-from revChatGPT.V1 import Chatbot
 import requests
 
-proxy_list_url = "https://raw.githubusercontent.com/mertguvencli/http-proxy-list/main/proxy-list/data.txt"
-pl = ProxyList.from_network_file(proxy_list_url)
-proxy = f"http://{pl.get_random_server().get_address()}"
-print(proxy)
-email = "micoolplays@gmail.com"
-password = "micooliscool"
-GPT = Chatbot(config={"email": email, "password": password, "proxy": proxy})
-prompt = "how many beaches does portugal have?"
-response = ""
+api_key = "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"
 
-for data in GPT.ask(prompt):
-    response = data["message"]
 
-print(response)
