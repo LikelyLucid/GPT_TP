@@ -8,4 +8,4 @@ proxy = pl.get_random_server().get_address()
 email = ""
 password = ""
 
-GPT = Chatbot(config={"email": email, "password": password})
+GPT = Chatbot(config={"email": email, "password": password, "proxy": proxy})
