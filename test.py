@@ -1,6 +1,7 @@
 import asyncio
 from pygpt import PyGPT
 
+session_token = 
 async def main():
     chat_gpt = PyGPT('eyJhbGciOiJkaXIiLCJlbmMiOiJBMR0NN....')
     await chat_gpt.connect()
