@@ -1,3 +1,3 @@
 import webbrowser
 
-url = 
+url = "https://chat.openai.com/chat"
