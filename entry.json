@@ -20,13 +20,13 @@
               "id": "GPT_Instruct",
               "type": "text",
               "label": "Instruction",
-              "default": "Respond to this:"
+              "default": ""
             },
             {
               "id": "GPT_Data",
               "type": "text",
               "label": "Data",
-              "default": "None"
+              "default": ""
             },
             {
               "id": "GPT_MODEL",
