@@ -1,8 +1,8 @@
 {
   "sdk": 3,
   "version": 100,
-  "name": "Example Plugin",
-  "id": "ExamplePlugin",
+  "name": "GPT TP",
+  "id": "GPT_TP",
   "categories": [
     {
       "id": "Main",
