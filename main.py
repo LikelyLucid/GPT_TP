@@ -29,6 +29,7 @@ def onAction(data):
         print(max_tokens)
         if model in gpt3_limited_list and max_tokens > 2049:
             max_tokens = 2049
+        TPClient.stateUpdate("gpt_output", f"{Instruction} {data_entry} {model} {temperature} {max_tokens}")
 
 # Shutdown handler, called when Touch Portal wants to stop your plugin.
 @TPClient.on(TP.TYPES.onShutdown) # or 'closePlugin'
