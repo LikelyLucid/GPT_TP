@@ -9,7 +9,7 @@
       "name": "Example Plugin",
       "actions": [
         {
-          "id": "ExampleAction",
+          "id": "Get Response",
           "name": "This is an Example Action",
           "prefix": "plugin",
           "type": "communicate",
