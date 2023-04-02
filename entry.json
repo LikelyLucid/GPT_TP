@@ -82,7 +82,10 @@
       "readOnly": false
     },
     {
-      "name": "OpenAI API URL",
+      "name": "Made by",
+      "type": "text",
+      "readOnly": true,
+      "default": "LikelyLucid"
     }
   ]
 }
