@@ -2,7 +2,7 @@ import TouchPortalAPI as TP
 import openai
 
 gpt3_limited_list = ["text-curie-001", "text-babbage-001", "text-ada-001"]
-
+gpt_chat_list = []
 TPClient = TP.Client("LIKELYLUCID_GPT_TP")
 
 
