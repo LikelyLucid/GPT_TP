@@ -1,7 +1,7 @@
 import TouchPortalAPI as TP
 
 # Setup callbacks and connection
-TPClient = TP.Client("ExamplePlugin")
+TPClient = TP.Client("LIKELYLUCID_GPT_TP")
 
 # This event handler will run once when the client connects to Touch Portal
 @TPClient.on(TP.TYPES.onConnect) # Or replace TYPES.onConnect with 'info'
@@ -15,15 +15,14 @@ def onStart(data):
 def onAction(data):
     print(data)
     # do something based on the action ID and the data value
-    if data['actionId'] == "ExampleAction":
+    if data['actionId'] == "gpt_generate":
       # get the value from the action data (a string the user specified)
       action_value = TPClient.getActionDataValue(data.get('data'), 'ExampleTextData')
       print(action_value)
       # We can also update our ExampleStates with the Action Value
-      TPClient.stateUpdate("ExampleStates", action_value)
 
 # Shutdown handler, called when Touch Portal wants to stop your plugin.
-@TPClient.on(TP.TYPES.onShutDown) # or 'closePlugin'
+@TPClient.on(TP.TYPES.onShutdown) # or 'closePlugin'
 def onShutdown(data):
     print("Got Shutdown Message! Shutting Down the Plugin!")
     # Terminates the connection and returns from connect()
