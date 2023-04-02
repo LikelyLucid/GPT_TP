@@ -73,13 +73,5 @@
         }
       ]
     }
-  "settings": [
-      {
-        "name": "OpenAI API Key",
-        "type": "text",
-        "isPassword": true,
-        "default": "",
-        "readonly": false
-      },
-    ]
-  }
+  ]
+}
