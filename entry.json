@@ -14,13 +14,19 @@
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "Print({$ExampleTextData$})",
+          "format": "Instruction: {$GPT_Instruct$} Data: {$GPT_Data$} Model: {$GPT_MODEL$}",
           "data": [
             {
-              "id": "ExampleTextData",
+              "id": "GPT_Instruct",
               "type": "text",
-              "label": "text",
-              "default": "Hello World"
+              "label": "Instruction",
+              "default": "Respond to this:"
+            },
+            {
+              "id": "GPT_Data",
+              "type": "text",
+              "label": "Data",
+              "default": "None"
             }
           ]
         }
