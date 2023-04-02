@@ -1,5 +1,5 @@
 {
-  "sdk": 3,
+  "sdk": 7,
   "version": 100,
   "name": "GPT TP",
   "id": "LIKELYLUCID_GPT_TP",
@@ -58,10 +58,10 @@
       ],
       "states": [
         {
-          "id": "ExampleState",
+          "id": "gpt_output",
           "type": "text",
-          "desc": "Example State",
-          "default": "None"
+          "desc": "Generated output",
+          "default": ""
         }
       ]
     }
