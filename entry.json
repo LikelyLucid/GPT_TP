@@ -74,11 +74,12 @@
       ]
     }
   "settings": [
-    {
-      "name": "OpenAI API Key",
-      "type": "text",
-      "default": "",
-      "readonly": false
-    }
-  ]
-}
+      {
+        "name": "OpenAI API Key",
+        "type": "text",
+        "isPassword": true,
+        "default": "",
+        "readonly": false
+      },
+    ]
+  }
