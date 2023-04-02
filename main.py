@@ -16,10 +16,18 @@ def onAction(data):
     print(data)
     # do something based on the action ID and the data value
     if data['actionId'] == "gpt_generate":
-      # get the value from the action data (a string the user specified)
-      action_value = TPClient.getActionDataValue(data.get('data'), 'ExampleTextData')
-      print(action_value)
-      # We can also update our ExampleStates with the Action Value
+        # get the value from the action data (a string the user specified)
+        Instruction = TPClient.getActionDataValue(data.get('data'), 'GPT_Instruct')
+        print(Instruction)
+        data_entry = TPClient.getActionDataValue(data.get('data'), 'GPT_Data')
+        print(data_entry)
+        model = TPClient.getActionDataValue(data.get('data'), 'GPT_MODEL')
+        print(model)
+        temperature = TPClient.getActionDataValue(data.get('data'), 'GPT_Temperature')
+        print(temperature)
+        max_tokens = int(TPClient.getActionDataValue(data.get('data'), 'GPT_MaxTokens'))
+        print(max_tokens)
+        # We can also update our ExampleStates with the Action Value
 
 # Shutdown handler, called when Touch Portal wants to stop your plugin.
 @TPClient.on(TP.TYPES.onShutdown) # or 'closePlugin'
