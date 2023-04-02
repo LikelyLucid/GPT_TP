@@ -1,23 +1,22 @@
 import TouchPortalAPI as TP
 import openai
 gpt3_limited_list = ["text-curie-001", "text-babbage-001", "text-ada-001"]
-# Setup callbacks and connection
+
 TPClient = TP.Client("LIKELYLUCID_GPT_TP")
 
-# This event handler will run once when the client connects to Touch Portal
-@TPClient.on(TP.TYPES.onConnect) # Or replace TYPES.onConnect with 'info'
+
+@TPClient.on(TP.TYPES.onConnect)
 def onStart(data):
     print("Connected!", data)
-    # Update a state value in TouchPortal
-    TPClient.stateUpdate("ExampleState", "Connected!")
+    data = {'settings': [{'OpenAI API Key': 'poopybum'}, {'Made by': 'LikelyLucid'}], 'tpVersionString': '3.1.11.0.0', 'pluginVersion': 100, 'tpVersionCode': 301011, 'sdkVersion': 6, 'type': 'info', 'status': 'paired'}
+    openai.api_key = data['settings'][0]['OpenAI API Key']
 
-# Action handlers, called when user activates one of this plugin's actions in Touch Portal.
-@TPClient.on(TP.TYPES.onAction) # Or 'action'
+
+@TPClient.on(TP.TYPES.onAction)
 def onAction(data):
     print(data)
-    # do something based on the action ID and the data value
     if data['actionId'] == "gpt_generate":
-        # get the value from the action data (a string the user specified)
+        # get the value from the action data
         Instruction = TPClient.getActionDataValue(data.get('data'), 'GPT_Instruct')
         print(Instruction)
         data_entry = TPClient.getActionDataValue(data.get('data'), 'GPT_Data')
@@ -35,11 +34,7 @@ def onAction(data):
 @TPClient.on(TP.TYPES.onShutdown) # or 'closePlugin'
 def onShutdown(data):
     print("Got Shutdown Message! Shutting Down the Plugin!")
-    # Terminates the connection and returns from connect()
     TPClient.disconnect()
 
-# After callback setup like we did then we can connect.
-# Note that `connect()` blocks further execution until
-# `disconnect()` is called in an event handler, or an
-# internal error occurs.
+
 TPClient.connect()
