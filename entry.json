@@ -14,7 +14,7 @@
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "Instruction: {$GPT_Instruct$} Data: {$GPT_Data$} Model: {$GPT_MODEL$}",
+          "format": "Instruction: {$GPT_Instruct$} Data: {$GPT_Data$} Model: {$GPT_MODEL$} Tempeture: {$GPT_Temperature$}",
           "data": [
             {
               "id": "GPT_Instruct",
@@ -42,7 +42,16 @@
                 "gpt-4-32k",
                 "text-curie-001",
                 "text-babbage-001",
-                "text-ada-001",
+                "text-ada-001"
+              ]
+            },
+            {
+              "id": "GPT_Temperature",
+              "type": "number",
+              "label": "Creativity of model",
+              "default": "0.7",
+              "min": "0",
+              "max": "1"
             }
           ]
         }
