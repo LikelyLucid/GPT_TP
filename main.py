@@ -9,15 +9,6 @@ TPClient = TP.Client("LIKELYLUCID_GPT_TP")
 @TPClient.on(TP.TYPES.onConnect)
 def onStart(data):
     print("Connected!", data)
-    data = {
-        "settings": [{"OpenAI API Key": "poopybum"}, {"Made by": "LikelyLucid"}],
-        "tpVersionString": "3.1.11.0.0",
-        "pluginVersion": 100,
-        "tpVersionCode": 301011,
-        "sdkVersion": 6,
-        "type": "info",
-        "status": "paired",
-    }
     openai.api_key = data["settings"][0]["OpenAI API Key"]
     print(openai.api_key)
 
@@ -33,7 +24,7 @@ def onAction(data):
         print(data_entry)
         model = TPClient.getActionDataValue(data.get("data"), "GPT_MODEL")
         print(model)
-        temperature = TPClient.getActionDataValue(data.get("data"), "GPT_Temperature")
+        temperature = floatTPClient.getActionDataValue(data.get("data"), "GPT_Temperature")
         print(temperature)
         max_tokens = int(
             float(TPClient.getActionDataValue(data.get("data"), "GPT_MaxTokens"))
