@@ -27,6 +27,12 @@
               "type": "text",
               "label": "Data",
               "default": "None"
+            },
+            {
+              "id": "GPT_MODEL",
+              "type": "choice",
+              "label": "Model",
+              "default": "None",
             }
           ]
         }
