@@ -1,0 +1,38 @@
+{
+  "sdk": 3,
+  "version": 100,
+  "name": "Example Plugin",
+  "id": "ExamplePlugin",
+  "categories": [
+    {
+      "id": "Main",
+      "name": "Example Plugin",
+      "actions": [
+        {
+          "id": "ExampleAction",
+          "name": "This is an Example Action",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "Print({$ExampleTextData$})",
+          "data": [
+            {
+              "id": "ExampleTextData",
+              "type": "text",
+              "label": "text",
+              "default": "Hello World"
+            }
+          ]
+        }
+      ],
+      "states": [
+        {
+          "id": "ExampleState",
+          "type": "text",
+          "desc": "Example State",
+          "default": "None"
+        }
+      ]
+    }
+  ]
+}
