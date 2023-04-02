@@ -7,7 +7,7 @@
     {
       "id": "gpt_tp_1",
       "name": "GPT TP",
-      "imagepath": "icon.png",
+      "imagepath": "%TP_PLUGIN_FOLDER%TP_GPT\\icon.png",
       "actions": [
         {
           "id": "gpt_generate",
