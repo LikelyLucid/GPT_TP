@@ -5,8 +5,8 @@
   "id": "GPT_TP",
   "categories": [
     {
-      "id": "Main",
-      "name": "Example Plugin",
+      "id": "gpt_tp_1",
+      "name": "GPT TP",
       "actions": [
         {
           "id": "Get Response",
