@@ -14,7 +14,7 @@
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "Instruction: {$GPT_Instruct$} Data: {$GPT_Data$} Model: {$GPT_MODEL$} Tempeture: {$GPT_Temperature$}",
+          "format": "Instruction: {$GPT_Instruct$} Data: {$GPT_Data$} Model: {$GPT_MODEL$} Temperature: {$GPT_Temperature$} Max Tokens: {$GPT_MaxTokens$}",
           "data": [
             {
               "id": "GPT_Instruct",
@@ -52,6 +52,14 @@
               "default": "0.7",
               "min": "0",
               "max": "1"
+            },
+            {
+              "id": "GPT_MaxTokens",
+              "type": "number",
+              "label": "Max Tokens",
+              "default": "500",
+              "min": "1",
+              "max": "4096"
             }
           ]
         }
