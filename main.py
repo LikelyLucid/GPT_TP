@@ -1,7 +1,6 @@
 import TouchPortalAPI as TP
-gpt3_limited_list = [text-curie-001
-text-babbage-001
-text-ada-001]
+import openai
+gpt3_limited_list = ["text-curie-001", "text-babbage-001", "text-ada-001"]
 # Setup callbacks and connection
 TPClient = TP.Client("LIKELYLUCID_GPT_TP")
 
@@ -29,7 +28,8 @@ def onAction(data):
         print(temperature)
         max_tokens = int(float(TPClient.getActionDataValue(data.get('data'), 'GPT_MaxTokens')))
         print(max_tokens)
-        # We can also update our ExampleStates with the Action Value
+        if model in gpt3_limited_list and max_tokens > 2049:
+            max_tokens = 2049
 
 # Shutdown handler, called when Touch Portal wants to stop your plugin.
 @TPClient.on(TP.TYPES.onShutdown) # or 'closePlugin'
