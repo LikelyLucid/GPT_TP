@@ -25,7 +25,7 @@ def onAction(data):
         print(model)
         temperature = TPClient.getActionDataValue(data.get('data'), 'GPT_Temperature')
         print(temperature)
-        max_tokens = int(TPClient.getActionDataValue(data.get('data'), 'GPT_MaxTokens'))
+        max_tokens = int(float(TPClient.getActionDataValue(data.get('data'), 'GPT_MaxTokens')))
         print(max_tokens)
         # We can also update our ExampleStates with the Action Value
 
