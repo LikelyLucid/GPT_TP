@@ -9,8 +9,8 @@
       "name": "GPT TP",
       "actions": [
         {
-          "id": "Get Response",
-          "name": "This is an Example Action",
+          "id": "gpt_generate",
+          "name": "Generate",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
