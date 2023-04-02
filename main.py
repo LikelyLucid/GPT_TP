@@ -1,5 +1,7 @@
 import TouchPortalAPI as TP
-
+gpt3_limited_list = [text-curie-001
+text-babbage-001
+text-ada-001]
 # Setup callbacks and connection
 TPClient = TP.Client("LIKELYLUCID_GPT_TP")
 
