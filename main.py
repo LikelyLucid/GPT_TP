@@ -19,6 +19,7 @@ def onStart(data):
         "status": "paired",
     }
     openai.api_key = data["settings"][0]["OpenAI API Key"]
+    print(openai.api_key)
 
 
 @TPClient.on(TP.TYPES.onAction)
