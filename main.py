@@ -24,7 +24,7 @@ def onAction(data):
         print(data_entry)
         model = TPClient.getActionDataValue(data.get("data"), "GPT_MODEL")
         print(model)
-        temperature = floatTPClient.getActionDataValue(data.get("data"), "GPT_Temperature")
+        temperature = float(TPClient.getActionDataValue(data.get("data"), "GPT_Temperature"))
         print(temperature)
         max_tokens = int(
             float(TPClient.getActionDataValue(data.get("data"), "GPT_MaxTokens"))
