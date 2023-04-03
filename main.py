@@ -2,7 +2,7 @@ import TouchPortalAPI as TP
 import openai
 
 gpt3_limited_list = ["text-curie-001", "text-babbage-001", "text-ada-001"]
-gpt_chat_list = []
+gpt_chat_list = ["gpt-3.5-turbo"]
 TPClient = TP.Client("LIKELYLUCID_GPT_TP")
 
 
@@ -33,12 +33,18 @@ def onAction(data):
         if model in gpt3_limited_list and max_tokens > 2049:
             max_tokens = 2049
         # TPClient.stateUpdate("gpt_output", f"{Instruction} {data_entry} {model} {temperature} {max_tokens}")
-        response = openai.Completion.create(
-            model = model,
-            prompt = f"{Instruction} {data_entry}",
-            temperature = temperature,
-            max_tokens = max_tokens,
-        )
+        if model in gpt_chat_list:
+            openai.ChatCompletion.create(
+                model = model,
+                messages = ["role": "user", "content": f"{Instruction} {data_entry}"],
+            )
+        else:
+            response = openai.Completion.create(
+                model = model,
+                prompt = f"{Instruction} {data_entry}",
+                temperature = temperature,
+                max_tokens = max_tokens,
+            )
         TPClient.stateUpdate("gpt_output", response)
 
 # Shutdown handler, called when Touch Portal wants to stop your plugin.
