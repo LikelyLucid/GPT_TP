@@ -38,7 +38,9 @@ def onAction(data):
                 model = model,
                 messages = [{"role": "user", "content": f"{Instruction} {data_entry}"}]
             )
+            print(response)
             response['choices'][0]['message']['content']
+            print(response)
         else:
             response = openai.Completion.create(
                 model = model,
@@ -46,6 +48,7 @@ def onAction(data):
                 temperature = temperature,
                 max_tokens = max_tokens,
             )
+            print(response)
         TPClient.stateUpdate("gpt_output", response)
 
 # Shutdown handler, called when Touch Portal wants to stop your plugin.
