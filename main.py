@@ -24,34 +24,38 @@ def onAction(data):
         print(data_entry)
         model = TPClient.getActionDataValue(data.get("data"), "GPT_MODEL")
         print(model)
-        temperature = float(TPClient.getActionDataValue(data.get("data"), "GPT_Temperature"))
+        temperature = float(
+            TPClient.getActionDataValue(data.get("data"), "GPT_Temperature")
+        )
         print(temperature)
         max_tokens = int(
             float(TPClient.getActionDataValue(data.get("data"), "GPT_MaxTokens"))
         )
         print(max_tokens)
-        if model in gpt3_limited_list and max_tokens > 2049:
+        if (
+            model in gpt3_limited_list and max_tokens > 2049
+        ):  # some models have token limit lower than what is set in the config
             max_tokens = 2049
-        # TPClient.stateUpdate("gpt_output", f"{Instruction} {data_entry} {model} {temperature} {max_tokens}")
-        if model in gpt_chat_list:
+        if model in gpt_chat_list: # some models use a different endpoint
             print("chat complete")
             response = openai.ChatCompletion.create(
-                model = model,
-                messages = [{"role": "user", "content": f"{Instruction} {data_entry}"}]
+                model=model,
+                messages=[{"role": "user", "content": f"{Instruction} {data_entry}"}],
             )
             print(response)
-            response = response['choices'][0]['message']['content']
+            response = response["choices"][0]["message"]["content"]
             print(response)
         else:
             print("complete")
             response = openai.Completion.create(
-                model = model,
-                prompt = f"{Instruction} {data_entry}",
-                temperature = temperature,
-                max_tokens = max_tokens,
+                model=model,
+                prompt=f"{Instruction} {data_entry}",
+                temperature=temperature,
+                max_tokens=max_tokens,
             )
             print(response)
         TPClient.stateUpdate("gpt_output", response)
+
 
 # Shutdown handler, called when Touch Portal wants to stop your plugin.
 @TPClient.on(TP.TYPES.onShutdown)  # or 'closePlugin'
