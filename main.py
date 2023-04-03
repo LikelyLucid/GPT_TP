@@ -34,6 +34,7 @@ def onAction(data):
             max_tokens = 2049
         # TPClient.stateUpdate("gpt_output", f"{Instruction} {data_entry} {model} {temperature} {max_tokens}")
         if model in gpt_chat_list:
+            print("chat complete")
             response = openai.ChatCompletion.create(
                 model = model,
                 messages = [{"role": "user", "content": f"{Instruction} {data_entry}"}]
@@ -42,6 +43,7 @@ def onAction(data):
             response['choices'][0]['message']['content']
             print(response)
         else:
+            print("complete")
             response = openai.Completion.create(
                 model = model,
                 prompt = f"{Instruction} {data_entry}",
