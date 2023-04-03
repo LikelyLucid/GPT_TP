@@ -3,7 +3,7 @@
   "version": 100,
   "name": "GPT TP",
   "id": "LIKELYLUCID_GPT_TP",
-  "plugin_start_cmd": "%TP_PLUGIN_FOLDER%\\main.exe",
+  "plugin_start_cmd": "%TP_PLUGIN_FOLDER%TP_GPT\\gpt.exe",
   "categories": [
     {
       "id": "gpt_tp_1",
