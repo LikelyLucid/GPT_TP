@@ -54,6 +54,7 @@ def onAction(data):
                 max_tokens=max_tokens,
             )
             print(response)
+            response = response["choices"][0]["text"]
         TPClient.stateUpdate("gpt_output", response)
 
 
