@@ -40,7 +40,7 @@ def onAction(data):
                 messages = [{"role": "user", "content": f"{Instruction} {data_entry}"}]
             )
             print(response)
-            response['choices'][0]['message']['content']
+            response = response['choices'][0]['message']['content']
             print(response)
         else:
             print("complete")
