@@ -1,6 +1,7 @@
 # Open AI Plugin for Touch Portal
 ## Features
 Windows Only
+
 Able to generate responses via OpenAI API
 **This will cost money to run via the Open AI API**
 
