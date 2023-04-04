@@ -24,7 +24,7 @@ Available models:
 
  1. install the plugin from the releases 
  2. go to [Account API Keys - OpenAI API](https://platform.openai.com/account/api-keys)
-3. Copy your secret key and paste it into OpenAI API key in the plugin's settings
+ 3. Copy your secret key and paste it into OpenAI API key in the plugin's settings
 ## Usage:
 **Instruction:** Can be used for instructions for the AI
 
@@ -37,6 +37,8 @@ Available models:
 **Max Tokens:** Sets the max number of tokens the AI can use to generate text *(doesnt do anything on 3.5-turbo)*
 
 **Response is outputted to the GPT state**
+
+**I recommend testing prompts in ChatGPT as you will get similar outputs on there free of charge**
 
 ## **Examples of Instruction and Data:**
 
