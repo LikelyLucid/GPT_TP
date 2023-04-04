@@ -32,9 +32,9 @@ Available models:
 
 **Model:** Choose out of the list of models, pricing and capabilities vary
 
-**Temperature:** Controls the creativity of the AI *(does do anything on 3.5-turbo)*
+**Temperature:** Controls the creativity of the AI *(doesnt do anything on 3.5-turbo)*
 
-**Max Tokens:** Sets the max number of tokens the AI can use to generate text *(does do anything on 3.5-turbo)*
+**Max Tokens:** Sets the max number of tokens the AI can use to generate text *(doesnt do anything on 3.5-turbo)*
 
 **Response is outputted to the GPT state**
 
